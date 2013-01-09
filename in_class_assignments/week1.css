@@ -1,0 +1,38 @@
+.col_1 {
+	float: left;
+}
+
+.col_2 {
+  float: left;
+}
+
+.col_3 {
+}
+
+.col_end {
+  clear: both;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+#CS, #IS {
+	font-family: arial;
+}
+
+.imp {
+	color: red;
+}
+
+#CIS p, td {
+	color: blue;
+}
+
+#CIS h3 {
+	background-color: gray;
+}
+
+#courses h3 {
+	background-color: purple;
+}
