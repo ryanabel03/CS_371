@@ -1,6 +1,7 @@
 .myself img {
   height: 20%;
   width: 20%;
+  float: right;
 }
 
 body {
