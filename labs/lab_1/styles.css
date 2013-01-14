@@ -41,7 +41,7 @@ table table {
   margin: 1px;
 }
 
-div .odd {
+.odd {
   background: gray;
 }
 
