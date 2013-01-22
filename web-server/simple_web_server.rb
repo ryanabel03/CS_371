@@ -1,9 +1,9 @@
 require 'sinatra'
 
 get '/' do
- send_file 'in_class_assignments/week_2/wake_up.html'
+ send_file 'labs/lab_2/index.html'
 end
 
-get '/alarm.js' do
- send_file 'in_class_assignments/week_2/alarm.js'
+get '/quiz.js' do
+ send_file 'labs/lab_2/quiz.js'
 end
