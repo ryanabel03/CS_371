@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=iso-8859-1"/>
+    <script src="/lab_3.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <table>
+    </table>
+    <form id="sweetForm" onsubmit="return calculateCost()">
+      <table id="order">
+        <tr>
+          <td>Item</td>
+          <td>Quantity</td>
+          <td>Total</td></tr>
+        <tr>
+          <td><input type="number" name="item" id="item"></td>
+          <td><input type="number" name="qty" id="qty"></td>
+          <td><input type="submit" value="Submit"></td></tr>
+      </table>
+    </form>
+
+    <table>
+      <tr>
+        <td>Item</td>
+        <td>Description</td>
+        <td>Price</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Baseball</td>
+        <td id="1">$2.25</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bat</td>
+        <td id="2">$30.00</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Glove</td>
+        <td id="3">$100.50</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Professional Trainer</td>
+        <td id="4">$10000.99</td>
+      </tr>
+  </body>
+</html>

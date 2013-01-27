@@ -1,9 +1,9 @@
 require 'sinatra'
 
 get '/' do
- send_file 'labs/lab_2/index.html'
+ send_file 'labs/lab_3/index.html'
 end
 
-get '/quiz.js' do
- send_file 'labs/lab_2/quiz.js'
+get '/lab_3.js' do
+ send_file 'labs/lab_3/lab_3.js'
 end
