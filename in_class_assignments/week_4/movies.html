@@ -1,0 +1,25 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <table>
+    <?php
+      $fp = file("bestPic.tx");
+      foreach($fp as $line) {
+        echo "<tr>";
+        $columns = $explode("\t", $line);
+        foreach($columns as $column) {
+          echo "<td>";
+            echo $column;
+          echo "</td>";
+        }
+        echo "</tr>";
+      }
+    ?>
+  </table>
+  </body>
+
+
+
+</html>
