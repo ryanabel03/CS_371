@@ -1,0 +1,73 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          type: "GET",
+          url: "http://www.cis.gvsu.edu/~scrippsj/cs371/labs/lab10/getTitles.php",
+          async: false,
+          success: function(data) {
+            jsonData = $.parseJSON(data);
+            for(i = 0; i < jsonData.length; i++) {
+              $("#movie-select").append('<option>' + jsonData[i] + '</option>');
+            }
+          },
+          error: function() {
+            console.log("error");
+          }
+        });
+        $('#tabs div').hide()
+        $('#tabs div:first').show()
+        $('#tabs ul li:first').addClass('active')
+
+        $('#tabs ul li a').click(function() {
+          $('#tabs ul li').removeClass('active')
+          $(this).parent().addClass('active')
+          var currentTab = $(this).attr('href')
+          $('#tabs div').hide();
+          $(currentTab).show();
+          return false;
+        })	
+      });
+
+      function getInfo() {
+        index = $("#movie-select")[0].selectedIndex
+
+        $.ajax({
+          type: "GET",
+          url: "http://www.cis.gvsu.edu/~scrippsj/cs371/labs/lab10/getMovie.php?id=" + index,
+          async: false,
+          success: function(data) {
+            console.log(data)
+            response = data.split("\t")
+            $("#tab_content1").html(response[1])
+            $("#tab_content2").html(response[2])
+          },
+          error: function() {
+            console.log("error 2")
+          }
+        })
+      }
+    </script>
+    <select id="movie-select" onchange="getInfo()"></select>
+
+
+    <div id='tabs'>
+      <ul class="tab_list">
+        <li class="tab">
+          <a href="#tab_content1">Story Line</a>
+        </li>
+        <li class="tab">
+          <a href="#tab_content2">Cast</a>
+        </li>
+      </ul>
+
+      <div id='tab_content1' class='content'></div>
+      <div id='tab_content2' class='content'></div>
+    </div>
+  </body>
+</html>
